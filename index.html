@@ -4,10 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Тестовый календарь</title>
+    <link rel="stylesheet" href="css/dialog.css"/>
     <link rel="stylesheet" href="css/calendar.css"/>
+    <link rel="stylesheet" href="css/all.css" />
+    <link rel="stylesheet" href="css/brands.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <button class="calendar-btn">Забронировать</button>
-    <script src="js/calendar.js" />
+    <div class="dialog--overlay">
+        <div class="dialog">
+            <button class="dialog--close-btn">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="calendar-wrapper">
+
+            </div>
+        </div>
+    </div>
+    <script src="js/dialog.js"></script>
+    <script src="js/calendar.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

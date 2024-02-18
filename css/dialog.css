@@ -1,0 +1,113 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    text-align: start;
+    font-family: 'Montserrat';
+    box-sizing: border-box;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+
+.calendar-btn {
+    padding: 8px 16px;
+    background-color: transparent;
+    border: 2px solid brown;
+    cursor: pointer;
+    margin: 48px;
+    position: relative;
+    transition: all .45s ease;
+}
+
+.calendar-btn::before {
+    position: absolute;
+    content: '';
+    background-color: brown;
+    top:0;
+    left: 0;
+    bottom:0;
+    right: 100%;
+    transition: right .45s ease;
+    color: brown;
+    z-index: -1;
+}
+
+.calendar-btn:hover {
+    color: white;
+    border-radius: 10px;
+}
+
+.calendar-btn:hover::before {
+    right: 0;
+    color: white;
+}
+
+.dialog--overlay {
+    position: fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background-color: rgba(0,0,0, .7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .35s ease;
+}
+
+.dialog--close-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: red;
+    box-shadow: none;
+    color: white;
+    font-size: 18px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    right: -8px;
+    top:-8px;
+    transition: transform .35s ease;
+}
+
+.dialog--close-btn:hover {
+    transform: rotate(180deg);
+}
+
+.dialog {
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    position: relative;
+    transform: translateY(-100%);
+    transition: transform .35s ease;
+}
+
+.dialog--overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dialog--overlay.open .dialog {
+    transform: translateY(0);
+}
