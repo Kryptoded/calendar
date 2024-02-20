@@ -7,6 +7,11 @@
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
+    position: fixed;
+    top: 0;
+    background-color: white;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .day {
@@ -17,7 +22,6 @@
     justify-content: center;
     align-items: center;
     border-right: none;
-
 }
 
 .day-off {
@@ -33,7 +37,14 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: center;   
+    border-bottom: 1px solid #ccc;
+    width: fit-content;   
+}
+
+.week .day {
+    border-bottom: none;
+    border-top: none;
+    cursor: pointer;
 }
 
 .calendar-wrapper {
@@ -44,4 +55,61 @@
 .month-label {
     display: flex;
     justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.month {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.month .week:nth-child(2) {
+    border-top: 1px solid #ccc;
+}
+
+.months .month:first-child {
+    margin-top: 50px;
+}
+
+.day.disable {
+    cursor: default;
+    color: #ccc;   
+}
+
+.day.today {
+    background-color: aquamarine;
+}
+
+
+.day.range-start {
+    position: relative;
+    background-color: greenyellow;
+}
+
+.day.range-start::before {
+    position: absolute;
+    top:0;
+    left: 0;
+    border: 12px solid transparent; border-left: 10px solid green; 
+    content:''
+}
+
+.day.range-end {
+    position: relative;
+    background-color: greenyellow;
+}
+
+.day.range-end::before {
+    position: absolute;
+    top:0;
+    right: 0;
+    border: 12px solid transparent; border-right: 10px solid green; 
+    content:''
+}
+
+
+.hovered {
+    background-color:chartreuse;
 }
