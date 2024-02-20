@@ -9,6 +9,7 @@ const $calendar = {
                     <div class='day day-off'>Сб</div>
                     <div class='day day-off'>Вс</div>
                 </div>
+                <button class='continue-btn' id='continue-btn' disabled>Продолжить</button>
                 <div class='months'>
                     
                 </div>
@@ -20,6 +21,9 @@ const $calendar = {
         htmlElement.insertAdjacentHTML('afterbegin', this.html)
         this.createMonths()
         this.addEvents()
+        document.body.querySelector('#continue-btn').addEventListener('click', ()=>{
+            this.onOk(this.dateStart, this.dateEnd)
+        })
     },
     addEvents(){
         this.notDisableDays = Array.from(document.body.querySelectorAll(".day:not(.disable)"))
@@ -31,6 +35,7 @@ const $calendar = {
     removeStartEnd() {
         this.dateStart = null
         this.dateEnd = null
+        document.body.querySelector('#continue-btn').disabled = true
         this.notDisableDays.forEach((item) =>{
             item.classList.remove('range-start')
             item.classList.remove('range-end')
@@ -47,6 +52,7 @@ const $calendar = {
             if (new Date(event.target.dataset['date']) > this.dateStart) {
                 this.dateEnd = new Date(event.target.dataset['date'])
                 event.target.classList.add('range-end')
+                document.body.querySelector('#continue-btn').disabled = false
             }
             return;
         }
@@ -131,4 +137,4 @@ const $calendar = {
     }
 }
 
-const html = ``
+const html = `` 

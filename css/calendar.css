@@ -11,6 +11,7 @@
     top: 0;
     background-color: white;
     left: 50%;
+    z-index: 999;
     transform: translateX(-50%);
 }
 
@@ -93,12 +94,14 @@
     top:0;
     left: 0;
     border: 12px solid transparent; border-left: 10px solid green; 
-    content:''
+    content:'';
+    transition: all .35s ease;
 }
 
 .day.range-end {
     position: relative;
     background-color: greenyellow;
+    transition: all .35s ease;
 }
 
 .day.range-end::before {
@@ -106,10 +109,36 @@
     top:0;
     right: 0;
     border: 12px solid transparent; border-right: 10px solid green; 
-    content:''
-}
+    content:'';
+    transition: all .35s ease;
 
+}
 
 .hovered {
     background-color:chartreuse;
+}
+
+.continue-btn {
+    background-color: brown;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 5px;
+    color: white;
+    border: none;
+    display: flex;
+    justify-content: center;
+    transition: all .35s ease;
+    font-size: 18px;
+}
+
+.continue-btn:hover {
+    cursor: pointer;
+}
+
+.continue-btn[disabled] {
+    cursor: default;
+    background-color: lightsalmon;
 }

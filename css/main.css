@@ -1,0 +1,10 @@
+input {
+    padding: 7px 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: all .24s ease;
+}
+
+.form {
+    margin: 10px;
+}

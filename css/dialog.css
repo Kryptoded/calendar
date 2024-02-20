@@ -84,7 +84,7 @@ ol, ul {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    z-index: 3;
+    z-index: 1000;
     position: absolute;
     right: -8px;
     top:-8px;
