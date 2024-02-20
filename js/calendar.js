@@ -136,5 +136,3 @@ const $calendar = {
         }
     }
 }
-
-const html = `` 

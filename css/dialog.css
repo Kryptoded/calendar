@@ -49,6 +49,7 @@ ol, ul {
 .calendar-btn:hover {
     color: white;
     border-radius: 10px;
+    overflow: hidden;
 }
 
 .calendar-btn:hover::before {
