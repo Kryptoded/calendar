@@ -10,8 +10,18 @@ $calendar.onOk = (dateStart, dateEnd) => {
     closeDialog()
 }
 
-form.addEventListener('submit', (e)=>{
+form.addEventListener('submit', async (e)=>{
     e.preventDefault()
-    console.log(e.target);
+    const formData = new FormData(e.target)
+    console.log(formData);
+
+    let response = await fetch('http://127.0.0.1:8000/api/booking/', {
+        method: 'POST',
+        body: formData
+      });
+  
+      let result = await response.json();
+  
+      alert(result.message);
 })
 // $calendar.setStartMonth()
